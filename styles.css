@@ -518,6 +518,19 @@ footer {
     transition: opacity 0.3s ease; /* Smooth transition for images */
 }
 
+/* Mobile styles (column layout) */
+@media (max-width: 768px) {
+    .image-gallery {
+        flex-direction: column; /* Stack images vertically */
+        align-items: center; /* Center images horizontally */
+    }
+
+    .image-gallery img {
+        max-width: 100%; /* Make images take full width */
+        max-height: 150px; /* Adjust height for better visibility */
+    }
+}
+
 /* Hide ARIA descriptions visually but keep them accessible to screen readers */
 .sr-only {
     position: absolute;
