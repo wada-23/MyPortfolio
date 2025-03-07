@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walid's Portfolio</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1 class="logo">MY PORTFOLIO</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="projects.html">Projects</a>
+                <a href="#about">About</a> <!-- Anchor link to the About section -->
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-content">
+            <p>HI, I'M WALID</p>
+            <h1>I'M A DESIGNER</h1>
+            <p>Welcome to my portfolio. I am a Designer specializing in Furniture Design and Architecture.</p>
+            <a href="projects.html">
+                <button>VIEW MY PROJECTS</button>
+            </a>
+        </div>
+        <div class="portrait-placeholder">
+            <img src="photo_2025-03-04_22-31-37(5).png" alt="Walid's Portrait">
+        </div>
+    </div>
+
+    <!-- About Me Section -->
+<section id="about" class="about-section">
+    <h2>About Me</h2>
+    <div class="about-content">
+        <div class="about-text">
+            <p>
+                Hi, I'm Walid, a passionate furniture designer with over 3 years of experience in creating functional, 
+                aesthetically pleasing, and sustainable furniture designs. My work is driven by a deep appreciation for 
+                craftsmanship, materials, and the stories they tell. I believe that great design is not just about 
+                aesthetics but also about creating pieces that enhance the lives of those who use them.
+            </p>
+            <p>
+                I specialize in modern and minimalist designs, often incorporating natural materials like wood, metal, 
+                and glass. My designs are inspired by the balance between form and function, and I strive to create 
+                pieces that are both beautiful and practical.
+            </p>
+            <p>
+                When I'm not designing, I enjoy exploring new materials, experimenting with 3D modeling, and staying 
+                up-to-date with the latest trends in furniture design. I'm always excited to take on new challenges 
+                and collaborate with clients to bring their visions to life.
+            </p>
+        </div>
+    </div>
+
+</section>
+    <!-- Other Details Title -->
+<section class="skills-section">
+    
+    
+    <!-- Other Details Section -->
+<section class="other-details-section">
+    <h2>More About me</h2>
+    <div class="details-content">
+        <div class="education">
+            <h3>Education</h3>
+            <p>
+                <strong>BSC Degree in Architecture</strong><br>
+                School of Architecture & Urban Design, Mekelle University<br>
+                Graduated: 2018
+            </p>
+        </div>
+        <div class="experience">
+            <h3>Experience</h3>
+            <p>
+                <strong>Senior Furniture Designer</strong><br>
+                ABC Design Studio, 2020 - Present<br>
+                - Led a team of designers to create custom furniture pieces for high-end clients.<br>
+                - Collaborated with architects and interior designers on large-scale projects.
+            </p>
+            <p>
+                <strong>Junior Furniture Designer</strong><br>
+                GM Furniture S.C., 2021 - 2024<br>
+                - Assisted in the design and development of furniture collections.<br>
+                - Created 3D models and technical drawings for production.
+            </p>
+        </div>
+        <div class="skills">
+            <h3>Software Skills</h3>
+            <ul>
+                <li>SketchUp</li>
+                <li>Blender</li>
+                <li>SolidWorks</li>
+                <li>MaxCut</li>
+                <li>Adobe Photoshop</li>
+                <li>Adobe Illustrator</li>
+                <li>Revit</li>
+                <li>AutoCAD</li>
+                <li>Rhino 3D</li>
+                <li>MS Office</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <h2>Contact Me</h2>
+        <p>Feel free to reach out to me via the following:</p>
+        <ul>
+            <li>Email: <a href="dilew7.wb@gmail.com" onclick="copyEmail(event)">dilew7.wb@gmail.com</a></li>
+            <li>Phone: +251 912 62 92 06</li>
+            <li>LinkedIn: <a href="https://www.linkedin.com/in/welidbeshir-wb-77790215a" target="_blank">LinkedIn Profile</a></li>
+            <li>GitHub: <a href="https://github.com/wada-23" target="_blank">github.com/wada-23</a></li>
+        </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>2024 Walid's Portfolio. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Copy Email -->
+    <script>
+        function copyEmail(event) {
+            event.preventDefault();
+            const email = event.target.href.replace('mailto:', '');
+            navigator.clipboard.writeText(email)
+                .then(() => {
+                    alert('Email copied to clipboard: ' + email);
+                })
+                .catch((err) => {
+                    console.error('Failed to copy email: ', err);
+                    alert('Failed to copy email. Please copy it manually.');
+                });
+        }
+    </script>
+</body>
+</html>

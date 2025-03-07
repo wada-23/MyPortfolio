@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Walid's Portfolio</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1 class="logo">MY PORTFOLIO</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="projects.html">Projects</a>
+                <a href="about.html">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="projects-section">
+            <h1>My Projects</h1>
+            <div class="projects-container">
+                <!-- Project 1 -->
+                <div class="project" onclick="openModal('modal1')">
+                    <img src="Render/weda 3-min.png" alt="Project 1">
+                    <h2>Modern Chair Design</h2>
+                    <p>A sleek and ergonomic chair designed for modern living spaces.</p>
+                </div>
+                <!-- Sofa Design Project -->
+                <div class="project" onclick="openModal('sofaModal')">
+                    <img src="Render/Sofa/sofa 8-min.png" alt="Modular Sofa Design">
+                    <h2>Modular Sofa Design</h2>
+                    <p>A customizable sofa system for modern living rooms.</p>
+                </div>
+                <!-- Add more projects as needed -->
+            </div>
+        </section>
+
+        <!-- Modal 1 with Multiple Images -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal1')">&times;</span>
+                <div class="image-gallery">
+                    <img src="Render/weda 3-min.png" alt="Project 1 image1" onclick="openImageViewer('modal1', this.src)">
+                    <img src="Render/weda 2-min.png" alt="Project 1 image2" onclick="openImageViewer('modal1', this.src)">
+                    <img src="Render/weda 4-min.png" alt="Project 1 image3" onclick="openImageViewer('modal1', this.src)">
+                    <img src="Render/weda DR-01-min.png" alt="Project 1 image4" onclick="openImageViewer('modal1', this.src)">
+                    <img src="Render/weda DR-02-min.png" alt="Project 1 image5" onclick="openImageViewer('modal1', this.src)">
+                </div>
+                <h2>Modern Chair Design</h2>
+                <p>
+                    This project involved designing a sleek and ergonomic chair for modern living spaces. 
+                    The chair is made with sustainable materials and features a minimalist design.
+                </p>
+                <p><strong>Tools Used:</strong> SketchUp, Adobe Illustrator, Blender</p>
+            </div>
+        </div>
+        <!-- Sofa Modal -->
+        <div id="sofaModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('sofaModal')">&times;</span>
+                <div class="image-gallery">
+                    <img src="Render/Sofa/sofa 8-min.png" alt="Sofa Design 1" onclick="openImageViewer('sofaModal', this.src)">
+                    <img src="Render/Sofa/sofa s-min.png" alt="Sofa Design 3" onclick="openImageViewer('sofaModal', this.src)">
+                    <img src="Render/Sofa/sofa 5-min.png" alt="Sofa Design 2" onclick="openImageViewer('sofaModal', this.src)">
+                    <img src="Render/Sofa/sofa 6-min.png" alt="Sofa Design 3" onclick="openImageViewer('sofaModal', this.src)">
+                    <img src="Render/Sofa/sofa frame cycles-min.png" alt="Sofa Design 3" onclick="openImageViewer('sofaModal', this.src)">
+                    <img src="Render/Sofa/sofa21-4-min.png" alt="Sofa Design 3" onclick="openImageViewer('sofaModal', this.src)">
+                    
+                </div>
+                <h2>Modular Sofa Design</h2>
+                <p>
+                    This project involved designing a modular sofa system for modern living rooms. 
+                    The sofa features customizable components that can be rearranged to fit any space. 
+                    It is made with high-quality materials for durability and comfort.
+                </p>
+                <p><strong>Tools Used:</strong> SketchUp, Blender, Adobe Illustrator</p>
+            </div>
+        </div>
+
+        <!-- Image Viewer -->
+        <div id="imageViewer" class="image-viewer">
+            <span class="close" onclick="closeImageViewer()">&times;</span>
+            <button class="nav-button prev" onclick="prevImage()">&#10094;</button>
+            <button class="nav-button next" onclick="nextImage()">&#10095;</button>
+            <div class="image-container">
+                <img id="expandedImage" src="" alt="Expanded Image">
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>2024 Walid's Portfolio. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Modals and Image Viewer -->
+    <script>
+        // Function to open a modal
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = "flex";
+        }
+
+        // Function to close a modal
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+        }
+
+        // Close modal if user clicks outside of it
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = "none";
+            }
+        }
+
+        let currentImageIndex = 0;
+let currentModalImages = [];
+
+// Function to open the image viewer
+function openImageViewer(modalId, imageSrc) {
+    const modal = document.getElementById(modalId);
+    const images = Array.from(modal.querySelectorAll('.image-gallery img, .image-gallery object')).map(el => el.src || el.data);
+    currentModalImages = images;
+    currentImageIndex = images.indexOf(imageSrc);
+
+    const imageViewer = document.getElementById('imageViewer');
+    const expandedImage = document.getElementById('expandedImage');
+
+    // Check if the image is an SVG
+    if (imageSrc.endsWith('.svg')) {
+        expandedImage.data = imageSrc; // Set the data attribute for <object>
+        expandedImage.type = "image/svg+xml"; // Set the MIME type
+    } else {
+        expandedImage.src = imageSrc; // Set the src attribute for <img>
+    }
+
+    imageViewer.style.display = "flex"; // Show the image viewer
+
+    // Update ARIA attributes
+    imageViewer.setAttribute('aria-labelledby', 'imageViewerTitle');
+    expandedImage.setAttribute('aria-describedby', 'imageDescription');
+
+    // Set focus on the image viewer for accessibility
+    imageViewer.focus();
+
+    // Add keyboard event listener
+    document.addEventListener('keydown', handleKeyDown);
+}
+
+// Function to close the image viewer
+function closeImageViewer() {
+    document.getElementById('imageViewer').style.display = "none";
+
+    // Remove keyboard event listener
+    document.removeEventListener('keydown', handleKeyDown);
+}
+
+// Function to handle keyboard navigation
+function handleKeyDown(e) {
+    if (document.getElementById('imageViewer').style.display === 'flex') {
+        switch (e.key) {
+            case 'ArrowLeft':
+                prevImage();
+                break;
+            case 'ArrowRight':
+                nextImage();
+                break;
+            case 'Escape':
+                closeImageViewer();
+                break;
+        }
+    }
+}
+
+// Function to show the previous image
+function prevImage() {
+    if (currentImageIndex > 0) {
+        currentImageIndex--;
+    } else {
+        currentImageIndex = currentModalImages.length - 1; // Loop to the last image
+    }
+    updateImage();
+}
+
+// Function to show the next image
+function nextImage() {
+    if (currentImageIndex < currentModalImages.length - 1) {
+        currentImageIndex++;
+    } else {
+        currentImageIndex = 0; // Loop to the first image
+    }
+    updateImage();
+}
+
+// Function to update the image with smooth transition
+function updateImage() {
+    const expandedImage = document.getElementById('expandedImage');
+    const imageSrc = currentModalImages[currentImageIndex];
+
+    // Check if the image is an SVG
+    if (imageSrc.endsWith('.svg')) {
+        expandedImage.data = imageSrc; // Set the data attribute for <object>
+        expandedImage.type = "image/svg+xml"; // Set the MIME type
+    } else {
+        expandedImage.src = imageSrc; // Set the src attribute for <img>
+    }
+}
+    </script>
+</body>
+</html>

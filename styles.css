@@ -1,0 +1,526 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #ffffff;
+    min-height: 100vh; /* Ensure the body takes up at least the full viewport height */
+    display: flex;
+    flex-direction: column;
+}
+
+header, footer {
+    flex-shrink: 0;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+
+main {
+    flex-grow: 1;
+}
+
+/* Header Styles */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.header-content {
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+/* Navigation Styles */
+nav {
+    display: flex;
+    gap: 20px; /* Adds space between nav items */
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #202020; /* Change color on hover */
+}
+
+/* Hero Section Styles */
+.hero {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 50px 20px 50px 100px;
+    background: url(background\ -black.jpg);
+    background-size:cover;
+}
+
+.hero-content {
+    max-width: 50%;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.hero button {
+    background-color: #202020;
+    color: #fff;
+    border: solid;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 7px;
+}
+
+.hero button:hover {
+    background-color: #555; /* Darker shade on hover */
+}
+
+/* Portrait Placeholder Styles */
+.portrait-placeholder {
+    width: 50%;
+    text-align: center;
+}
+
+.portrait-placeholder img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 40px; /* Optional: Adds rounded corners */
+}
+
+/* Add buffer before About Me section */
+#about h2{
+    padding: 30px 30px ; /* Adjust this value to increase or decrease the buffer */
+    background-color: #333;
+    border-radius: 5px;
+    text-align: center;
+    
+}
+
+/* About Me Section */
+.about-section {
+    padding: 50px 20px;
+    background-color: #222;
+    color: #fff;
+}
+
+.about-content {
+    display: block;
+    justify-content: space-evenly;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-text {
+    max-width: 100%;
+    text-align: left;
+}
+
+.about-text p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+
+}
+
+/* Software Skills Section */
+.skills-section {
+    padding: 150px 20px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+
+.skill {
+    margin-bottom: 100px;
+}
+
+/* Other Details Section */
+.other-details-section {
+    padding: 50px 20px;
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.details-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+}
+
+.education, .experience, .skills {
+    flex: 1;
+    text-align: left;
+}
+
+.education h3, .experience h3, .skills h3 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.education p, .experience p, .skills ul {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.skills ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skills li {
+    margin-bottom: 10px;
+}
+
+/* Contact Section Styles */
+.contact-section {
+    padding: 50px 20px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.contact-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-section li {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.contact-section a {
+    color: #ff6347;
+    text-decoration: none;
+}
+
+.contact-section a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Styles */
+footer {
+    font-size: smaller;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive Design - Media Queries */
+@media (max-width: 768px) {
+    /* Adjust header for smaller screens */
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* Adjust hero section for smaller screens */
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .portrait-placeholder {
+        width: 80%;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    /* Adjust about section for smaller screens */
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-text {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* Adjust footer for smaller screens */
+    footer {
+        position: static; /* Remove fixed positioning on small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further adjustments for very small screens */
+    .hero h1 {
+        font-size: 1.8em;
+    }
+
+    .hero p {
+        font-size: 0.9em;
+    }
+
+    .hero button {
+        padding: 8px 16px;
+        font-size: 0.9em;
+    }
+
+    .portrait-placeholder {
+        width: 100%;
+    }
+
+    .details-content {
+        flex-direction: column;
+    }
+}
+
+/* Projects Section */
+.projects-section {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    color: #333;
+    text-align: center;
+}
+
+.projects-section h1 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.project:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.project img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project h2 {
+    font-size: 1.5em;
+    margin: 20px 0 10px;
+    padding: 0 20px;
+}
+
+.project p {
+    font-size: 1em;
+    color: #555;
+    padding: 0 20px 20px;
+    line-height: 1.6;
+}
+
+/* Modal Styles */
+.modal {
+    display:none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    margin-top: 50px;
+    border-radius: 10px;
+    max-width: 1400px; /* Increased max-width for larger modal */
+    width: 90%;
+    text-align: left;
+    position: relative;
+    max-height: 90vh; /* Limit height to 90% of viewport height */
+    overflow-y: auto; /* Add scroll if content exceeds height */
+}
+
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.modal-content img {
+    margin-top: 40px;
+    width: 46%;
+    height: 400px; /* Increased height for larger image */
+    object-fit:cover;
+    border-radius: 0px;
+    margin-bottom: 20px;
+    cursor: pointer; /* Indicates the image is clickable */
+}
+
+.modal-content h2 {
+    font-size: 2.5em; /* Larger font size for title */
+    margin-bottom: 20px;
+}
+
+.modal-content p {
+    font-size: 1.2em; /* Larger font size for text */
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.modal-content .close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2em;
+    cursor: pointer;
+    color: #333;
+}
+
+.modal-content .close:hover {
+    color: #ff6347;
+}
+
+/* Image Viewer Styles */
+.image-viewer {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.image-viewer .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.image-viewer .nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    transition: opacity 0.3s ease; /* Smooth transition for buttons */
+}
+
+.image-viewer .nav-button.prev {
+    left: 20px;
+}
+
+.image-viewer .nav-button.next {
+    right: 20px;
+}
+
+.image-viewer .image-container {
+    max-width: 90%;
+    max-height: 90%;
+    overflow: auto; /* Show scrollbar if the image is larger than the container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-viewer .image-container img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit:contain; /* Ensure the image fits within the container */
+    transition: opacity 0.3s ease; /* Smooth transition for images */
+}
+
+/* Hide ARIA descriptions visually but keep them accessible to screen readers */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
