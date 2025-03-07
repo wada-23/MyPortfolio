@@ -398,7 +398,7 @@ footer {
 }
 
 .modal-content {
-    background-color: #fff;
+    background-color: #444;
     padding: 30px;
     margin-top: 50px;
     border-radius: 10px;
@@ -408,12 +408,15 @@ footer {
     position: relative;
     max-height: 90vh; /* Limit height to 90% of viewport height */
     overflow-y: auto; /* Add scroll if content exceeds height */
+    
 }
 
-.image-gallery {
+.modal-content .image-gallery {
+    background-color: #fff;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
 }
 
 .modal-content img {
@@ -424,6 +427,8 @@ footer {
     border-radius: 0px;
     margin-bottom: 20px;
     cursor: pointer; /* Indicates the image is clickable */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+
 }
 
 .modal-content h2 {
@@ -434,7 +439,7 @@ footer {
 .modal-content p {
     font-size: 1.2em; /* Larger font size for text */
     line-height: 1.6;
-    color: #555;
+    color: #fff;
     margin-bottom: 20px;
 }
 
@@ -444,7 +449,7 @@ footer {
     right: 20px;
     font-size: 2em;
     cursor: pointer;
-    color: #333;
+    color: #000;
 }
 
 .modal-content .close:hover {
@@ -507,9 +512,9 @@ footer {
 }
 
 .image-viewer .image-container img {
-    max-width: 90%;
-    max-height: 90%;
-    object-fit:contain; /* Ensure the image fits within the container */
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Ensure the image fits within the container */
     transition: opacity 0.3s ease; /* Smooth transition for images */
 }
 

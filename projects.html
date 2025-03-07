@@ -118,25 +118,19 @@
 
         let currentImageIndex = 0;
 let currentModalImages = [];
+let touchStartX = 0;
+let touchEndX = 0;
 
 // Function to open the image viewer
 function openImageViewer(modalId, imageSrc) {
     const modal = document.getElementById(modalId);
-    const images = Array.from(modal.querySelectorAll('.image-gallery img, .image-gallery object')).map(el => el.src || el.data);
+    const images = Array.from(modal.querySelectorAll('.image-gallery img')).map(img => img.src);
     currentModalImages = images;
     currentImageIndex = images.indexOf(imageSrc);
 
     const imageViewer = document.getElementById('imageViewer');
     const expandedImage = document.getElementById('expandedImage');
-
-    // Check if the image is an SVG
-    if (imageSrc.endsWith('.svg')) {
-        expandedImage.data = imageSrc; // Set the data attribute for <object>
-        expandedImage.type = "image/svg+xml"; // Set the MIME type
-    } else {
-        expandedImage.src = imageSrc; // Set the src attribute for <img>
-    }
-
+    expandedImage.src = imageSrc; // Set the image source
     imageViewer.style.display = "flex"; // Show the image viewer
 
     // Update ARIA attributes
@@ -198,15 +192,39 @@ function nextImage() {
 // Function to update the image with smooth transition
 function updateImage() {
     const expandedImage = document.getElementById('expandedImage');
-    const imageSrc = currentModalImages[currentImageIndex];
+    expandedImage.src = currentModalImages[currentImageIndex]; // Update the image source
+}
 
-    // Check if the image is an SVG
-    if (imageSrc.endsWith('.svg')) {
-        expandedImage.data = imageSrc; // Set the data attribute for <object>
-        expandedImage.type = "image/svg+xml"; // Set the MIME type
-    } else {
-        expandedImage.src = imageSrc; // Set the src attribute for <img>
+// Function to handle touch start event
+function handleTouchStart(e) {
+    touchStartX = e.touches[0].clientX; // Get the X coordinate of the touch
+}
+
+// Function to handle touch move event
+function handleTouchMove(e) {
+    touchEndX = e.touches[0].clientX; // Get the X coordinate of the touch
+}
+
+// Function to handle touch end event
+function handleTouchEnd() {
+    const swipeThreshold = 50; // Minimum distance to consider it a swipe
+    const deltaX = touchEndX - touchStartX; // Calculate the horizontal distance
+
+    if (deltaX > swipeThreshold) {
+        // Swipe right -> Previous image
+        prevImage();
+    } else if (deltaX < -swipeThreshold) {
+        // Swipe left -> Next image
+        nextImage();
     }
+}
+
+// Add touch event listeners to the image container
+const imageContainer = document.querySelector('.image-container');
+if (imageContainer) {
+    imageContainer.addEventListener('touchstart', handleTouchStart, { passive: true });
+    imageContainer.addEventListener('touchmove', handleTouchMove, { passive: true });
+    imageContainer.addEventListener('touchend', handleTouchEnd, { passive: true });
 }
     </script>
 </body>
