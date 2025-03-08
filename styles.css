@@ -200,36 +200,55 @@ nav a:hover {
     margin-bottom: 10px;
 }
 
-/* Contact Section Styles */
-.contact-section {
-    padding: 50px 20px;
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-}
-
-.contact-section h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-}
-
 .contact-section ul {
     list-style: none;
     padding: 0;
 }
 
-.contact-section li {
-    margin-bottom: 10px;
-    font-size: 1.2em;
+/* Contact Section */
+.contact-section {
+    text-align: center; /* Center-align the heading and contact list */
+    padding: 20px;
+    background-color: #333; /* Background color for the section */
+    color: #fff; /* Text color */
 }
 
-.contact-section a {
-    color: #ff6347;
+.contact-list {
+    list-style: none; /* Remove default list styling */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Make the list items flex containers */
+    justify-content: center; /* Center the items horizontally */
+    flex-wrap: wrap; /* Allow items to wrap to the next line if needed */
+    gap: 20px; /* Space between items */
+}
+
+.contact-list li {
+    display: flex; /* Make each list item a flex container */
+    align-items: center; /* Center items vertically */
+    gap: 10px; /* Space between icon and text */
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.contact-list .icon {
+    width: 24px; /* Icon size */
+    height: 24px;
+}
+
+.contact-list a {
+    color: #ff6347; /* Link color */
     text-decoration: none;
 }
 
-.contact-section a:hover {
-    text-decoration: underline;
+.contact-list a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+@media (max-width: 768px) {
+    .contact-list {
+        flex-direction: column; /* Stack items vertically on small screens */
+        align-items: center; /* Center items horizontally */
+    }
 }
 
 /* Footer Styles */
