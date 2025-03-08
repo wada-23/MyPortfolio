@@ -13,7 +13,7 @@
             <nav>
                 <a href="index.html">Home</a>
                 <a href="projects.html">Projects</a>
-                <a href="about.html">About</a>
+                <a href="#about.html">About</a>
                 <a href="#contact">Contact</a>
             </nav>
         </div>
@@ -35,11 +35,27 @@
                     <h2>Modular Sofa Design</h2>
                     <p>A customizable sofa system for modern living rooms.</p>
                 </div>
+                <!-- 3-Seater Waiting Chair Project -->
+                <div class="project" onclick="openModal('waitingChairModal')">
+                    <img src="Render/Waiting chair/3S3-min.png" alt="3-Seater Waiting Chair">
+                    <h2>3-Seater Waiting Chair</h2>
+                    <p>A comfortable and durable waiting chair for public spaces.</p>
+                </div>
+                <!-- Modern Desk Office Desk Family Project -->
+                <div class="project" onclick="openModal('officeDeskModal')">
+                    <img src="Render/Desks/spider-Family1(2)-min.png" alt="Modern Desk Office Desk Family">
+                    <h2>Modern Desk Office Desk Family</h2>
+                    <p>A modern and functional office desk family for professional workspaces.</p>
+                </div>
+                
                 <!-- Add more projects as needed -->
             </div>
         </section>
 
-        <!-- Modal 1 with Multiple Images -->
+
+
+
+        <!-- Modern Chair Modal 1  -->
         <div id="modal1" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closeModal('modal1')">&times;</span>
@@ -64,11 +80,10 @@
                 <span class="close" onclick="closeModal('sofaModal')">&times;</span>
                 <div class="image-gallery">
                     <img src="Render/Sofa/sofa 8-min.png" alt="Sofa Design 1" onclick="openImageViewer('sofaModal', this.src)">
-                    <img src="Render/Sofa/sofa s-min.png" alt="Sofa Design 3" onclick="openImageViewer('sofaModal', this.src)">
                     <img src="Render/Sofa/sofa 5-min.png" alt="Sofa Design 2" onclick="openImageViewer('sofaModal', this.src)">
                     <img src="Render/Sofa/sofa 6-min.png" alt="Sofa Design 3" onclick="openImageViewer('sofaModal', this.src)">
-                    <img src="Render/Sofa/sofa frame cycles-min.png" alt="Sofa Design 3" onclick="openImageViewer('sofaModal', this.src)">
-                    <img src="Render/Sofa/sofa21-4-min.png" alt="Sofa Design 3" onclick="openImageViewer('sofaModal', this.src)">
+                    <img src="Render/Sofa/sofa frame cycles-min.png" alt="Sofa Design 4" onclick="openImageViewer('sofaModal', this.src)">
+                    <img src="Render/Sofa/sofa21-4-min.png" alt="Sofa Design 5" onclick="openImageViewer('sofaModal', this.src)">
                     
                 </div>
                 <h2>Modular Sofa Design</h2>
@@ -77,28 +92,83 @@
                     The sofa features customizable components that can be rearranged to fit any space. 
                     It is made with high-quality materials for durability and comfort.
                 </p>
-                <p><strong>Tools Used:</strong> SketchUp, Blender, Adobe Illustrator</p>
+                <p><strong>Tools Used:</strong> SketchUp, Blender</p>
+                <p><strong>Materials Used:</strong> plywood, wood, Foam, Fabric </p>
             </div>
         </div>
 
-        <!-- Image Viewer -->
-        <div id="imageViewer" class="image-viewer">
+        <!-- 3-Seater Waiting Chair Modal -->
+        <div id="waitingChairModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('waitingChairModal')">&times;</span>
+                <div class="image-gallery">
+                    <img src="Render/Waiting chair/3S3-min.png" alt="3-Seater Waiting Chair 1" onclick="openImageViewer('waitingChairModal', this.src)">
+                    <img src="Render/Waiting chair/3S-min.png" alt="3-Seater Waiting Chair 2" onclick="openImageViewer('waitingChairModal', this.src)">
+                    <img src="Render/Waiting chair/Assem1-3seater3c-min.jpg" alt="3-Seater Waiting Chair 3" onclick="openImageViewer('waitingChairModal', this.src)">
+                    <img src="Render/Waiting chair/Assem1-3seater3b-min.jpg" alt="3-Seater Waiting Chair 4" onclick="openImageViewer('waitingChairModal', this.src)">
+                    <img src="Render/Waiting chair/3swc.gif" alt="3-Seater Waiting Chair 5" onclick="openImageViewer('waitingChairModal', this.src)">
+                </div>
+                <h2>3-Seater Waiting Chair</h2>
+                <p>
+                    This project involved designing a comfortable and durable 3-seater waiting chair for public spaces. 
+                    The chair features a sleek, modern design with ergonomic support for long waiting periods. 
+                    It is made with high-quality materials to ensure durability and comfort.
+                </p>
+                <p><strong>Tools Used:</strong> SolidWorks, Blender</p>
+                <p><strong>Materials Used:</strong> Sheet metal, RHS, Powder paint, Foam, Imitation </p>
+
+            </div>
+        </div>
+
+                <!-- Modern Desk Office Desk Family Modal -->
+        <div id="officeDeskModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('officeDeskModal')">&times;</span>
+                <div class="image-gallery">
+                    <img src="Render/Desks/spider-Family1(2)-min.png" alt="Office Desk 0" onclick="openImageViewer('officeDeskModal', this.src)">
+                    <img src="Render/Desks/spider-Family3-min.png" alt="Office Desk 1" onclick="openImageViewer('officeDeskModal', this.src)">
+                    <img src="Render/Desks/spider-L-min.png" alt="Office Desk 2" onclick="openImageViewer('officeDeskModal', this.src)">
+                    <img src="Render/Desks/spider-BS2-min.png" alt="Office Desk 3" onclick="openImageViewer('officeDeskModal', this.src)">
+                    <img src="Render/Desks/spider-CT-min.png" alt="Office Desk 4" onclick="openImageViewer('officeDeskModal', this.src)">
+                    <img src="Render/Desks/spider-120-min.png" alt="Office Desk 5" onclick="openImageViewer('officeDeskModal', this.src)">
+                    <img src="Render/Desks/spider-180-min.png" alt="Office Desk 6" onclick="openImageViewer('officeDeskModal', this.src)">
+                    <img src="Render/Desks/WS-04-min.png" alt="Office Desk 7" onclick="openImageViewer('officeDeskModal', this.src)">
+                    <img src="Render/Desks/WS-02-min.png" alt="Office Desk 8" onclick="openImageViewer('officeDeskModal', this.src)">
+                </div>
+                <h2>Modern Desk Office Desk Family</h2>
+                <p>
+                    This project involved designing a modern and functional office desk family for professional workspaces. 
+                    The desk family includes a main desk, side tables, Bookshelf and Workstations all designed with a sleek and minimalist aesthetic. 
+                    The desks are made with high-quality materials to ensure durability and ergonomic comfort.
+                </p>
+                <p><strong>Tools Used:</strong> SketchUp, Blender </p>
+                <p><strong>Materials Used:</strong> MDF, PVC Paper, Paint, Sheet metal, RHS, Powder paint </p>
+            </div>
+        </div>
+
+        <div id="imageViewer" class="image-viewer" tabindex="0" aria-labelledby="imageViewerTitle">
             <span class="close" onclick="closeImageViewer()">&times;</span>
             <button class="nav-button prev" onclick="prevImage()">&#10094;</button>
             <button class="nav-button next" onclick="nextImage()">&#10095;</button>
             <div class="image-container">
-                <img id="expandedImage" src="" alt="Expanded Image">
+                <img id="expandedImage" src="" alt="Expanded Image" aria-describedby="imageDescription">
             </div>
+            <div id="imageViewerTitle" class="sr-only">Image Viewer</div>
+            <div id="imageDescription" class="sr-only">An expanded view of the selected image.</div>
         </div>
     </main>
 
     <!-- Footer -->
     <footer>
-        <p>2024 Walid's Portfolio. All rights reserved.</p>
+        <p>&copy; <span id="currentYear"></span> Walid's Portfolio. All rights reserved.</p>
     </footer>
 
+    
     <!-- JavaScript for Modals and Image Viewer -->
     <script>
+
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
         // Function to open a modal
         function openModal(modalId) {
             document.getElementById(modalId).style.display = "flex";
@@ -117,115 +187,116 @@
         }
 
         let currentImageIndex = 0;
-let currentModalImages = [];
-let touchStartX = 0;
-let touchEndX = 0;
+        let currentModalImages = [];
+        let touchStartX = 0;
+        let touchEndX = 0;
 
-// Function to open the image viewer
-function openImageViewer(modalId, imageSrc) {
-    const modal = document.getElementById(modalId);
-    const images = Array.from(modal.querySelectorAll('.image-gallery img')).map(img => img.src);
-    currentModalImages = images;
-    currentImageIndex = images.indexOf(imageSrc);
+        // Function to open the image viewer
+        function openImageViewer(modalId, imageSrc) {
+            const modal = document.getElementById(modalId);
+            const images = Array.from(modal.querySelectorAll('.image-gallery img')).map(img => img.src);
+            currentModalImages = images;
+            currentImageIndex = images.indexOf(imageSrc);
 
-    const imageViewer = document.getElementById('imageViewer');
-    const expandedImage = document.getElementById('expandedImage');
-    expandedImage.src = imageSrc; // Set the image source
-    imageViewer.style.display = "flex"; // Show the image viewer
+            const imageViewer = document.getElementById('imageViewer');
+            const expandedImage = document.getElementById('expandedImage');
+            expandedImage.src = imageSrc; // Set the image source
+            imageViewer.style.display = "flex"; // Show the image viewer
 
-    // Update ARIA attributes
-    imageViewer.setAttribute('aria-labelledby', 'imageViewerTitle');
-    expandedImage.setAttribute('aria-describedby', 'imageDescription');
+            // Update ARIA attributes
+            imageViewer.setAttribute('aria-labelledby', 'imageViewerTitle');
+            expandedImage.setAttribute('aria-describedby', 'imageDescription');
 
-    // Set focus on the image viewer for accessibility
-    imageViewer.focus();
+            // Set focus on the image viewer for accessibility
+            imageViewer.focus();
 
-    // Add keyboard event listener
-    document.addEventListener('keydown', handleKeyDown);
-}
-
-// Function to close the image viewer
-function closeImageViewer() {
-    document.getElementById('imageViewer').style.display = "none";
-
-    // Remove keyboard event listener
-    document.removeEventListener('keydown', handleKeyDown);
-}
-
-// Function to handle keyboard navigation
-function handleKeyDown(e) {
-    if (document.getElementById('imageViewer').style.display === 'flex') {
-        switch (e.key) {
-            case 'ArrowLeft':
-                prevImage();
-                break;
-            case 'ArrowRight':
-                nextImage();
-                break;
-            case 'Escape':
-                closeImageViewer();
-                break;
+            // Add keyboard event listener
+            document.addEventListener('keydown', handleKeyDown);
         }
-    }
-}
 
-// Function to show the previous image
-function prevImage() {
-    if (currentImageIndex > 0) {
-        currentImageIndex--;
-    } else {
-        currentImageIndex = currentModalImages.length - 1; // Loop to the last image
-    }
-    updateImage();
-}
+        // Function to close the image viewer
+        function closeImageViewer() {
+            document.getElementById('imageViewer').style.display = "none";
 
-// Function to show the next image
-function nextImage() {
-    if (currentImageIndex < currentModalImages.length - 1) {
-        currentImageIndex++;
-    } else {
-        currentImageIndex = 0; // Loop to the first image
-    }
-    updateImage();
-}
+            // Remove keyboard event listener
+            document.removeEventListener('keydown', handleKeyDown);
+        }
 
-// Function to update the image with smooth transition
-function updateImage() {
-    const expandedImage = document.getElementById('expandedImage');
-    expandedImage.src = currentModalImages[currentImageIndex]; // Update the image source
-}
+        // Function to handle keyboard navigation
+        function handleKeyDown(e) {
+            if (document.getElementById('imageViewer').style.display === 'flex') {
+                switch (e.key) {
+                    case 'ArrowLeft':
+                        prevImage();
+                        break;
+                    case 'ArrowRight':
+                        nextImage();
+                        break;
+                    case 'Escape':
+                        closeImageViewer();
+                        break;
+                }
+            }
+        }
 
-// Function to handle touch start event
-function handleTouchStart(e) {
-    touchStartX = e.touches[0].clientX; // Get the X coordinate of the touch
-}
+        // Function to show the previous image
+        function prevImage() {
+            if (currentImageIndex > 0) {
+                currentImageIndex--;
+            } else {
+                currentImageIndex = currentModalImages.length - 1; // Loop to the last image
+            }
+            updateImage();
+        }
 
-// Function to handle touch move event
-function handleTouchMove(e) {
-    touchEndX = e.touches[0].clientX; // Get the X coordinate of the touch
-}
+        // Function to show the next image
+        function nextImage() {
+            if (currentImageIndex < currentModalImages.length - 1) {
+                currentImageIndex++;
+            } else {
+                currentImageIndex = 0; // Loop to the first image
+            }
+            updateImage();
+        }
 
-// Function to handle touch end event
-function handleTouchEnd() {
-    const swipeThreshold = 50; // Minimum distance to consider it a swipe
-    const deltaX = touchEndX - touchStartX; // Calculate the horizontal distance
+        // Function to update the image with smooth transition
+        function updateImage() {
+            const expandedImage = document.getElementById('expandedImage');
+            expandedImage.src = currentModalImages[currentImageIndex]; // Update the image source
+        }
 
-    if (deltaX > swipeThreshold) {
-        // Swipe right -> Previous image
-        prevImage();
-    } else if (deltaX < -swipeThreshold) {
-        // Swipe left -> Next image
-        nextImage();
-    }
-}
+        // Function to handle touch start event
+        function handleTouchStart(e) {
+            touchStartX = e.touches[0].clientX; // Get the X coordinate of the touch
+        }
 
-// Add touch event listeners to the image container
-const imageContainer = document.querySelector('.image-container');
-if (imageContainer) {
-    imageContainer.addEventListener('touchstart', handleTouchStart, { passive: true });
-    imageContainer.addEventListener('touchmove', handleTouchMove, { passive: true });
-    imageContainer.addEventListener('touchend', handleTouchEnd, { passive: true });
-}
+        // Function to handle touch move event
+        function handleTouchMove(e) {
+            touchEndX = e.touches[0].clientX; // Get the X coordinate of the touch
+        }
+
+        // Function to handle touch end event
+        function handleTouchEnd() {
+            const swipeThreshold = 50; // Minimum distance to consider it a swipe
+            const deltaX = touchEndX - touchStartX; // Calculate the horizontal distance
+
+            if (deltaX > swipeThreshold) {
+                // Swipe right -> Previous image
+                prevImage();
+            } else if (deltaX < -swipeThreshold) {
+                // Swipe left -> Next image
+                nextImage();
+            }
+        }
+
+        // Add touch event listeners to the image container
+        const imageContainer = document.querySelector('.image-container');
+        if (imageContainer) {
+            imageContainer.addEventListener('touchstart', handleTouchStart, { passive: true });
+            imageContainer.addEventListener('touchmove', handleTouchMove, { passive: true });
+            imageContainer.addEventListener('touchend', handleTouchEnd, { passive: true });
+        }
+
     </script>
 </body>
 </html>

@@ -20,7 +20,7 @@
     </header>
 
     <!-- Hero Section -->
-    <div class="hero">
+    <div class="hero" aria-label="Hero section with a background image">
         <div class="hero-content">
             <p>HI, I'M WALID</p>
             <h1>I'M A DESIGNER</h1>
@@ -122,11 +122,14 @@
 
     <!-- Footer -->
     <footer>
-        <p>2024 Walid's Portfolio. All rights reserved.</p>
+        <p>&copy; <span id="currentYear"></span> Walid's Portfolio. All rights reserved.</p>
     </footer>
 
     <!-- JavaScript for Copy Email -->
     <script>
+
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
         function copyEmail(event) {
             event.preventDefault();
             const email = event.target.href.replace('mailto:', '');
