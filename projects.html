@@ -8,7 +8,6 @@
     <meta name="author" content="Walid">
     <title>Projects - Walid's Portfolio</title>
     <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 <body>
     <header>
@@ -256,9 +255,9 @@
             <div class="modal-content">
                 <span class="close" onclick="closeModal('DiningChairModal')" tabindex="0" role="button" aria-label="Close modal">&times;</span>
                 <div class="image-gallery">
-                    <img src="images/GC/Guest chair6.png" alt="Dining Chair Design image 1" onclick="openImageViewer('DiningchairModal', this.src)" tabindex="0" role="button" aria-label="View image 1">
-                    <img src="images/GC/Guest chair2.png" alt="Dining Chair Design image 2" onclick="openImageViewer('DiningchairModal', this.src)" tabindex="0" role="button" aria-label="View image 2">
-                    <img src="images/GC/Guest chair3.png" alt="Dining Chair Design image 3" onclick="openImageViewer('DiningchairModal', this.src)" tabindex="0" role="button" aria-label="View image 3">
+                    <img src="images/GC/Guest chair6.png" alt="Dining Chair Design image 1" onclick="openImageViewer('DiningChairModal', this.src)" tabindex="0" role="button" aria-label="View image 1">
+                    <img src="images/GC/Guest chair2.png" alt="Dining Chair Design image 2" onclick="openImageViewer('DiningChairModal', this.src)" tabindex="0" role="button" aria-label="View image 2">
+                    <img src="images/GC/Guest chair3.png" alt="Dining Chair Design image 3" onclick="openImageViewer('DiningChairModal', this.src)" tabindex="0" role="button" aria-label="View image 3">
                     <img src="images/GC/Guest chair5.png" alt="Dining Chair Design image 4" onclick="openImageViewer('DiningChairModal', this.src)" tabindex="0" role="button" aria-label="View image 4">
                 </div>
                 <h2 id="DiningChairModalTitle">Dining Chair</h2>
@@ -484,6 +483,7 @@
             imageContainer.addEventListener('touchmove', handleTouchMove, { passive: true });
             imageContainer.addEventListener('touchend', handleTouchEnd, { passive: true });
         }
+        
         
     </script>
 </body>
