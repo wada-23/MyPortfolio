@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Walid's Portfolio showcasing modern furniture designs including chairs, sofas, and office desks.">
+    <meta name="keywords" content="portfolio, furniture design, modern chair, modular sofa, office desk">
+    <meta name="author" content="Walid">
     <title>Projects - Walid's Portfolio</title>
     <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 <body>
     <header>
@@ -20,53 +24,132 @@
     </header>
 
     <main>
+        <!-- Tab Navigation -->
         <section class="projects-section">
             <h1>My Projects</h1>
-            <div class="projects-container">
-                <!-- Project 1 -->
-                <div class="project" onclick="openModal('modal1')">
-                    <img src="Render/weda 3-min.png" alt="Project 1">
-                    <h2>Modern Chair Design</h2>
-                    <p>A sleek and ergonomic chair designed for modern living spaces.</p>
+            <div class="tabs">
+                <button class="tab-button" onclick="openTab('gallery')">Gallery</button>
+                <button class="tab-button" onclick="openTab('videos')">Videos</button>
+                <button class="tab-button" onclick="openTab('models')">3D Models</button>
+                <button class="tab-button" onclick="openTab('others')">Others</button>
+            </div>
+
+        <!-- Tab Content Sections -->
+        <section id="gallery" class="tab-content active">
+            <h1>Gallery</h1>
+                    <div class="projects-container">
+                        <!-- Project 1 -->
+                        <div class="project" onclick="openModal('ModernchairModal')" data-index="0" data-model-id="ModernchairModal" tabindex="0" role="button" aria-label="View Modern chair Design">
+                            <img src="images/Modern chair/weda 3-min.png" alt="Modern chair Design">
+                            <h2>Modern chair Design</h2>
+                            <p>A sleek and ergonomic chair designed for modern living spaces</p>
+                        </div>
+                        <div class="project" onclick="openModal('sofaModal')" data-index="1" data-model-id="sofaModal" tabindex="0" role="button" aria-label="View Modular Sofa Design">
+                            <img src="images/Sofa/sofa 8-min.png" alt="Modular Sofa Design">
+                            <h2>Sofa Design</h2>
+                            <p>Elegant sofa for modern living rooms.</p>
+                        </div>
+                        <!-- 3-Seater Waiting Chair Project -->
+                        <div class="project" onclick="openModal('waitingChairModal')" data-index="2" data-model-id="waitingChairModal" tabindex="0" role="button" aria-label="View 3-Seater Waiting Chair">
+                            <img src="images/Waiting chair/3S3-min.png" alt="3-Seater Waiting Chair">
+                            <h2>3-Seater Waiting Chair</h2>
+                            <p>Comfortable and durable waiting chair for public spaces.</p>
+                        </div>
+                        <!-- Modern Office Desk Family Project -->
+                        <div class="project" onclick="openModal('officeDeskModal')" data-index="3" data-model-id="officeDeskModal" tabindex="0" role="button" aria-label="View Modern Office Desk Family">
+                            <img src="images/Desks/spider-Family1(2)-min.png" alt="Modern Office Desk Family">
+                            <h2>Modern Office Desk Family</h2>
+                            <p>Modern and functional office desk family for professional workspaces.</p>
+                        </div>
+                        <div class="project" onclick="openModal('ReceptionDeskModal')" data-index="4" data-model-id="ReceptionDeskModal" tabindex="0" role="button" aria-label="View Reception Desk Design">
+                            <img src="images/Reception Desk/rdTRC2.png" alt="Reception Desk Design">
+                            <h2>Reception Desk Design</h2>
+                            <p>Minimalist reception desk designed for both functionality and aesthetics.</p>
+                        </div>
+                        <div class="project" onclick="openModal('DiningChairModal')" data-index="5" data-model-id="DiningchairModal" tabindex="0" role="button" aria-label="View Dining chair Design">
+                            <img src="images/GC/Guest chair6.png" alt="Dining chair Design">
+                            <h2>Dining chair Design</h2>
+                            <p>This dining chair is designed with perfect blend of style and comfort.</p>
+                        </div>
+                        <div class="project" onclick="openModal('cafechairModal')" data-index="6" data-model-id="cafechairModal" tabindex="0" role="button" aria-label="View cafe chair Design">
+                            <img src="images/BICA/bica1.png" alt="cafe chair Design">
+                            <h2>cafe chair Design</h2>
+                            <p>Outdoor dining chair is designed with perfect blend of style and comfort.</p>
+                        </div>
+                        
+                        <!-- Add more gallery projects here -->
+                    </div> 
+        </section>
+
+        <section id="videos" class="tab-content">
+            <h1>Videos</h1>
+            <div class="video-container">
+                <div class="video-item">
+                    <video controls>
+                        <source src="video1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <h2>Project Walkthrough</h2>
+                    <p>A detailed walkthrough of the modern chair design process.</p>
                 </div>
-                <!-- Sofa Design Project -->
-                <div class="project" onclick="openModal('sofaModal')">
-                    <img src="Render/Sofa/sofa 8-min.png" alt="Modular Sofa Design">
-                    <h2>Modular Sofa Design</h2>
-                    <p>A customizable sofa system for modern living rooms.</p>
+                <div class="video-item">
+                    <video controls>
+                        <source src="video2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <h2>Sofa Assembly</h2>
+                    <p>Step-by-step assembly of the modular sofa system.</p>
                 </div>
-                <!-- 3-Seater Waiting Chair Project -->
-                <div class="project" onclick="openModal('waitingChairModal')">
-                    <img src="Render/Waiting chair/3S3-min.png" alt="3-Seater Waiting Chair">
-                    <h2>3-Seater Waiting Chair</h2>
-                    <p>A comfortable and durable waiting chair for public spaces.</p>
-                </div>
-                <!-- Modern Desk Office Desk Family Project -->
-                <div class="project" onclick="openModal('officeDeskModal')">
-                    <img src="Render/Desks/spider-Family1(2)-min.png" alt="Modern Desk Office Desk Family">
-                    <h2>Modern Desk Office Desk Family</h2>
-                    <p>A modern and functional office desk family for professional workspaces.</p>
-                </div>
-                
-                <!-- Add more projects as needed -->
+                <!-- Add more videos here -->
             </div>
         </section>
 
+        <section id="3d-models" class="tab-content">
+            <h1>3D Models</h1>
+            <div class="model-viewer-container">
+                <model-viewer src="model.glb" alt="3D Model" auto-rotate camera-controls>
+                    <div class="model-description">
+                        <p>
+                            This 3D model showcases a modern reception desk designed for corporate offices.
+                            It features a sleek, minimalist design with high-quality materials and integrated
+                            cable management for a clean and professional look.
+                        </p>
+                    </div>
+                </model-viewer>
+            </div>
+        </section>
 
+        <section id="others" class="tab-content">
+            <h1>Others</h1>
+            <div class="others-container">
+                <div class="other-item">
+                    <h2>Design Sketches</h2>
+                    <p>Explore the initial sketches and concepts behind my projects.</p>
+                </div>
+                <div class="other-item">
+                    <h2>Material Samples</h2>
+                    <p>View samples of materials used in my designs.</p>
+                </div>
+                <!-- Add more "Others" content here -->
+            </div>
+        </section>
+
+        <!-- Loading Spinner -->
+        <div id="loading-spinner" class="loading-spinner"></div>
 
 
         <!-- Modern Chair Modal 1  -->
-        <div id="modal1" class="modal">
+        <div id="ModernchairModal" class="modal" role="dialog" aria-labelledby="modal1Title">
             <div class="modal-content">
-                <span class="close" onclick="closeModal('modal1')">&times;</span>
+                <span class="close" onclick="closeModal('ModernchairModal')" tabindex="0" role="button" aria-label="Close modal">&times;</span>
                 <div class="image-gallery">
-                    <img src="Render/weda 3-min.png" alt="Project 1 image1" onclick="openImageViewer('modal1', this.src)">
-                    <img src="Render/weda 2-min.png" alt="Project 1 image2" onclick="openImageViewer('modal1', this.src)">
-                    <img src="Render/weda 4-min.png" alt="Project 1 image3" onclick="openImageViewer('modal1', this.src)">
-                    <img src="Render/weda DR-01-min.png" alt="Project 1 image4" onclick="openImageViewer('modal1', this.src)">
-                    <img src="Render/weda DR-02-min.png" alt="Project 1 image5" onclick="openImageViewer('modal1', this.src)">
+                    <img src="images/Modern chair/weda 3-min.png" alt="Modern Chair Design image 1" onclick="openImageViewer('ModernchairModal', this.src)" tabindex="0" role="button" aria-label="View image 1">
+                    <img src="images/Modern chair/weda 2-min.png" alt="Modern Chair Design image 2" onclick="openImageViewer('ModernchairModal', this.src)" tabindex="0" role="button" aria-label="View image 2">
+                    <img src="images/Modern chair/weda 4-min.png" alt="Modern Chair Design image 3" onclick="openImageViewer('ModernchairModal', this.src)" tabindex="0" role="button" aria-label="View image 3">
+                    <img src="images/Modern chair/weda DR-01-min.png" alt="Modern Chair Design image 4" onclick="openImageViewer('ModernchairModal', this.src)" tabindex="0" role="button" aria-label="View image 4">
+                    <img src="images/Modern chair/weda DR-02-min.png" alt="Modern Chair Design image 5" onclick="openImageViewer('ModernchairModal', this.src)" tabindex="0" role="button" aria-label="View image 5">
                 </div>
-                <h2>Modern Chair Design</h2>
+                <h2 id="modal1Title">Modern Chair Design</h2>
                 <p>
                     This project involved designing a sleek and ergonomic chair for modern living spaces. 
                     The chair is made with sustainable materials and features a minimalist design.
@@ -74,19 +157,19 @@
                 <p><strong>Tools Used:</strong> SketchUp, Adobe Illustrator, Blender</p>
             </div>
         </div>
-        <!-- Sofa Modal -->
-        <div id="sofaModal" class="modal">
+
+        <!-- Sofa Modal2 -->
+        <div id="sofaModal" class="modal" role="dialog" aria-labelledby="sofaModalTitle">
             <div class="modal-content">
-                <span class="close" onclick="closeModal('sofaModal')">&times;</span>
+                <span class="close" onclick="closeModal('sofaModal')" tabindex="0" role="button" aria-label="Close modal">&times;</span>
                 <div class="image-gallery">
-                    <img src="Render/Sofa/sofa 8-min.png" alt="Sofa Design 1" onclick="openImageViewer('sofaModal', this.src)">
-                    <img src="Render/Sofa/sofa 5-min.png" alt="Sofa Design 2" onclick="openImageViewer('sofaModal', this.src)">
-                    <img src="Render/Sofa/sofa 6-min.png" alt="Sofa Design 3" onclick="openImageViewer('sofaModal', this.src)">
-                    <img src="Render/Sofa/sofa frame cycles-min.png" alt="Sofa Design 4" onclick="openImageViewer('sofaModal', this.src)">
-                    <img src="Render/Sofa/sofa21-4-min.png" alt="Sofa Design 5" onclick="openImageViewer('sofaModal', this.src)">
-                    
+                    <img src="images/Sofa/sofa 8-min.png" alt="Sofa Design image 1" onclick="openImageViewer('sofaModal', this.src)" tabindex="0" role="button" aria-label="View image 1">
+                    <img src="images/Sofa/sofa 5-min.png" alt="Sofa Design image 2" onclick="openImageViewer('sofaModal', this.src)" tabindex="0" role="button" aria-label="View image 2">
+                    <img src="images/Sofa/sofa 6-min.png" alt="Sofa Design image 3" onclick="openImageViewer('sofaModal', this.src)" tabindex="0" role="button" aria-label="View image 3">
+                    <img src="images/Sofa/sofa frame cycles-min.png" alt="Modular Sofa Design image 4" onclick="openImageViewer('sofaModal', this.src)" tabindex="0" role="button" aria-label="View image 4">
+                    <img src="images/Sofa/sofa21-4-min.png" alt="Sofa Design image 5" onclick="openImageViewer('sofaModal', this.src)" tabindex="0" role="button" aria-label="View image 5">
                 </div>
-                <h2>Modular Sofa Design</h2>
+                <h2 id="sofaModalTitle">Modular Sofa Design</h2>
                 <p>
                     This project involved designing a modular sofa system for modern living rooms. 
                     The sofa features customizable components that can be rearranged to fit any space. 
@@ -97,18 +180,18 @@
             </div>
         </div>
 
-        <!-- 3-Seater Waiting Chair Modal -->
-        <div id="waitingChairModal" class="modal">
+        <!-- 3-Seater Waiting Chair Modal3 -->
+        <div id="waitingChairModal" class="modal" role="dialog" aria-labelledby="waitingChairModalTitle">
             <div class="modal-content">
-                <span class="close" onclick="closeModal('waitingChairModal')">&times;</span>
+                <span class="close" onclick="closeModal('waitingChairModal')" tabindex="0" role="button" aria-label="Close modal">&times;</span>
                 <div class="image-gallery">
-                    <img src="Render/Waiting chair/3S3-min.png" alt="3-Seater Waiting Chair 1" onclick="openImageViewer('waitingChairModal', this.src)">
-                    <img src="Render/Waiting chair/3S-min.png" alt="3-Seater Waiting Chair 2" onclick="openImageViewer('waitingChairModal', this.src)">
-                    <img src="Render/Waiting chair/Assem1-3seater3c-min.jpg" alt="3-Seater Waiting Chair 3" onclick="openImageViewer('waitingChairModal', this.src)">
-                    <img src="Render/Waiting chair/Assem1-3seater3b-min.jpg" alt="3-Seater Waiting Chair 4" onclick="openImageViewer('waitingChairModal', this.src)">
-                    <img src="Render/Waiting chair/3swc.gif" alt="3-Seater Waiting Chair 5" onclick="openImageViewer('waitingChairModal', this.src)">
+                    <img src="images/Waiting chair/3S3-min.png" alt="3-Seater Waiting Chair image 1" onclick="openImageViewer('waitingChairModal', this.src)" tabindex="0" role="button" aria-label="View image 1">
+                    <img src="images/Waiting chair/3S-min.png" alt="3-Seater Waiting Chair image 2" onclick="openImageViewer('waitingChairModal', this.src)" tabindex="0" role="button" aria-label="View image 2">
+                    <img src="images/Waiting chair/Assem1-3seater3c-min.jpg" alt="3-Seater Waiting Chair image 3" onclick="openImageViewer('waitingChairModal', this.src)" tabindex="0" role="button" aria-label="View image 3">
+                    <img src="images/Waiting chair/Assem1-3seater3b-min.jpg" alt="3-Seater Waiting Chair image 4" onclick="openImageViewer('waitingChairModal', this.src)" tabindex="0" role="button" aria-label="View image 4">
+                    <img src="images/Waiting chair/3swc.gif" alt="3-Seater Waiting Chair image 5" onclick="openImageViewer('waitingChairModal', this.src)" tabindex="0" role="button" aria-label="View image 5">
                 </div>
-                <h2>3-Seater Waiting Chair</h2>
+                <h2 id="waitingChairModalTitle">3-Seater Waiting Chair</h2>
                 <p>
                     This project involved designing a comfortable and durable 3-seater waiting chair for public spaces. 
                     The chair features a sleek, modern design with ergonomic support for long waiting periods. 
@@ -116,26 +199,25 @@
                 </p>
                 <p><strong>Tools Used:</strong> SolidWorks, Blender</p>
                 <p><strong>Materials Used:</strong> Sheet metal, RHS, Powder paint, Foam, Imitation </p>
-
             </div>
         </div>
 
-                <!-- Modern Desk Office Desk Family Modal -->
-        <div id="officeDeskModal" class="modal">
+        <!-- Modern Office Desk Family Modal4 -->
+        <div id="officeDeskModal" class="modal" role="dialog" aria-labelledby="officeDeskModalTitle">
             <div class="modal-content">
-                <span class="close" onclick="closeModal('officeDeskModal')">&times;</span>
+                <span class="close" onclick="closeModal('officeDeskModal')" tabindex="0" role="button" aria-label="Close modal">&times;</span>
                 <div class="image-gallery">
-                    <img src="Render/Desks/spider-Family1(2)-min.png" alt="Office Desk 0" onclick="openImageViewer('officeDeskModal', this.src)">
-                    <img src="Render/Desks/spider-Family3-min.png" alt="Office Desk 1" onclick="openImageViewer('officeDeskModal', this.src)">
-                    <img src="Render/Desks/spider-L-min.png" alt="Office Desk 2" onclick="openImageViewer('officeDeskModal', this.src)">
-                    <img src="Render/Desks/spider-BS2-min.png" alt="Office Desk 3" onclick="openImageViewer('officeDeskModal', this.src)">
-                    <img src="Render/Desks/spider-CT-min.png" alt="Office Desk 4" onclick="openImageViewer('officeDeskModal', this.src)">
-                    <img src="Render/Desks/spider-120-min.png" alt="Office Desk 5" onclick="openImageViewer('officeDeskModal', this.src)">
-                    <img src="Render/Desks/spider-180-min.png" alt="Office Desk 6" onclick="openImageViewer('officeDeskModal', this.src)">
-                    <img src="Render/Desks/WS-04-min.png" alt="Office Desk 7" onclick="openImageViewer('officeDeskModal', this.src)">
-                    <img src="Render/Desks/WS-02-min.png" alt="Office Desk 8" onclick="openImageViewer('officeDeskModal', this.src)">
+                    <img src="images/Desks/spider-Family1(2)-min.png" alt="Modern Office Desk Family image 1" onclick="openImageViewer('officeDeskModal', this.src)" tabindex="0" role="button" aria-label="View image 1">
+                    <img src="images/Desks/spider-Family3-min.png" alt="Modern Office Desk Family image 2" onclick="openImageViewer('officeDeskModal', this.src)" tabindex="0" role="button" aria-label="View image 2">
+                    <img src="images/Desks/spider-L-min.png" alt="Modern Office Desk Family image 3" onclick="openImageViewer('officeDeskModal', this.src)" tabindex="0" role="button" aria-label="View image 3">
+                    <img src="images/Desks/spider-BS2-min.png" alt="Modern Office Desk Family image 4" onclick="openImageViewer('officeDeskModal', this.src)" tabindex="0" role="button" aria-label="View image 4">
+                    <img src="images/Desks/spider-CT-min.png" alt="Modern Office Desk Family image 5" onclick="openImageViewer('officeDeskModal', this.src)" tabindex="0" role="button" aria-label="View image 5">
+                    <img src="images/Desks/spider-120-min.png" alt="Modern Office Desk Family image 6" onclick="openImageViewer('officeDeskModal', this.src)" tabindex="0" role="button" aria-label="View image 6">
+                    <img src="images/Desks/spider-180-min.png" alt="Modern Office Desk Family image 7" onclick="openImageViewer('officeDeskModal', this.src)" tabindex="0" role="button" aria-label="View image 7">
+                    <img src="images/Desks/WS-04-min.png" alt="Modern Office Desk Family image 8" onclick="openImageViewer('officeDeskModal', this.src)" tabindex="0" role="button" aria-label="View image 8">
+                    <img src="images/Desks/WS-02-min.png" alt="Modern Office Desk Family image 9" onclick="openImageViewer('officeDeskModal', this.src)" tabindex="0" role="button" aria-label="View image 9">
                 </div>
-                <h2>Modern Desk Office Desk Family</h2>
+                <h2 id="officeDeskModalTitle">Modern Office Desk Family</h2>
                 <p>
                     This project involved designing a modern and functional office desk family for professional workspaces. 
                     The desk family includes a main desk, side tables, Bookshelf and Workstations all designed with a sleek and minimalist aesthetic. 
@@ -146,10 +228,76 @@
             </div>
         </div>
 
+        <!-- Modern Reception Desk Modal4 -->
+        <div id="ReceptionDeskModal" class="modal" role="dialog" aria-labelledby="ReceptionDeskModalTitle">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('ReceptionDeskModal')" tabindex="0" role="button" aria-label="Close modal">&times;</span>
+                <div class="image-gallery">
+                    <img src="images/Reception Desk/rdTRC2.png" alt="Reception Desk Design image 1" onclick="openImageViewer('ReceptionDeskModal', this.src)" tabindex="0" role="button" aria-label="View image 1">
+                    <img src="images/Reception Desk/rdTRC2back.png" alt="Reception Desk Design image 2" onclick="openImageViewer('ReceptionDeskModal', this.src)" tabindex="0" role="button" aria-label="View image 2">
+                    <img src="images/Reception Desk/Reception front.png" alt="Reception Desk Design image 3" onclick="openImageViewer('ReceptionDeskModal', this.src)" tabindex="0" role="button" aria-label="View image 3">
+                    <img src="images/Reception Desk/Reception iso2.png" alt="Reception Desk Design image 4" onclick="openImageViewer('ReceptionDeskModal', this.src)" tabindex="0" role="button" aria-label="View image 4">
+                    <img src="images/Reception Desk/Reception iso XPLOD.png" alt="Reception Desk Design image 5" onclick="openImageViewer('ReceptionDeskModal', this.src)" tabindex="0" role="button" aria-label="View image 5">
+                </div>
+                <h2 id="ReceptionDeskModalTitle">Modern Reception Desk</h2>
+                <p>
+                    This contemporary reception desk combines elegance and practicality, making it an ideal choice for any professional environment. 
+                    Crafted with premium materials, it offers durability and a polished finish that enhances the overall ambiance of your space.
+                    Whether you're looking to make a lasting impression on clients or create a welcoming atmosphere for visitors, 
+                    this reception desk delivers both style and functionality.
+                </p>
+                <p><strong>Tools Used:</strong>Blender </p>
+                <p><strong>Materials Used:</strong> MDF, PVC Paper, Paint</p>
+            </div>
+        </div>
+
+        <!-- Dining Chair Modal5 -->
+        <div id="DiningChairModal" class="modal" role="dialog" aria-labelledby="DiningChairModalTitle">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('DiningChairModal')" tabindex="0" role="button" aria-label="Close modal">&times;</span>
+                <div class="image-gallery">
+                    <img src="images/GC/Guest chair6.png" alt="Dining Chair Design image 1" onclick="openImageViewer('DiningchairModal', this.src)" tabindex="0" role="button" aria-label="View image 1">
+                    <img src="images/GC/Guest chair2.png" alt="Dining Chair Design image 2" onclick="openImageViewer('DiningchairModal', this.src)" tabindex="0" role="button" aria-label="View image 2">
+                    <img src="images/GC/Guest chair3.png" alt="Dining Chair Design image 3" onclick="openImageViewer('DiningchairModal', this.src)" tabindex="0" role="button" aria-label="View image 3">
+                    <img src="images/GC/Guest chair5.png" alt="Dining Chair Design image 4" onclick="openImageViewer('DiningChairModal', this.src)" tabindex="0" role="button" aria-label="View image 4">
+                </div>
+                <h2 id="DiningChairModalTitle">Dining Chair</h2>
+                <p>
+                    This modern dining chair combines sleek metal legs with comfortable upholstery, 
+                    making it perfect for contemporary dining spaces. Its minimalist design and 
+                    durable construction ensure both style and functionality.
+                </p>
+                <p><strong>Tools Used:</strong>SketchUp, Blender </p>
+                <p><strong>Materials Used:</strong> CHS, Plywood, Foam, Fabric, Paint</p>
+            </div>
+        </div>
+
+        <!-- cafe Chair Modal6 -->
+        <div id="cafechairModal" class="modal" role="dialog" aria-labelledby="cafechairModalTitle">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('cafechairModal')" tabindex="0" role="button" aria-label="Close modal">&times;</span>
+                <div class="image-gallery">
+                    <img src="images/BICA/bica1.png" alt="Cafe chair Design image 1" onclick="openImageViewer('cafechairModal', this.src)" tabindex="0" role="button" aria-label="View image 1">
+                    <img src="images/BICA/bica2.png" alt="cafe Chair Design image 2" onclick="openImageViewer('cafeChairModal', this.src)" tabindex="0" role="button" aria-label="View image 2">
+                    <img src="images/BICA/bica3.png" alt="cafe Chair Design image 3" onclick="openImageViewer('cafeChairModal', this.src)" tabindex="0" role="button" aria-label="View image 3">
+                    <img src="images/BICA/bica4.png" alt="cafe Chair Design image 4" onclick="openImageViewer('cafeChairModal', this.src)" tabindex="0" role="button" aria-label="View image 4">
+                    
+                </div>
+                <h2 id="DiningChairModalTitle">Dining Chair</h2>
+                <p>
+                    This modern dining chair combines sleek metal legs with comfortable upholstery, 
+                    making it perfect for contemporary dining spaces. Its minimalist design and 
+                    durable construction ensure both style and functionality.
+                </p>
+                <p><strong>Tools Used:</strong>SketchUp, Blender </p>
+                <p><strong>Materials Used:</strong> CHS, Plywood, Foam, Fabric, Paint</p>
+            </div>
+        </div>
+
         <div id="imageViewer" class="image-viewer" tabindex="0" aria-labelledby="imageViewerTitle">
-            <span class="close" onclick="closeImageViewer()">&times;</span>
-            <button class="nav-button prev" onclick="prevImage()">&#10094;</button>
-            <button class="nav-button next" onclick="nextImage()">&#10095;</button>
+            <span class="close" onclick="closeImageViewer()" tabindex="0" role="button" aria-label="Close image viewer">&times;</span>
+            <button class="nav-button prev" onclick="prevImage()" tabindex="0" aria-label="Previous image">&#10094;</button>
+            <button class="nav-button next" onclick="nextImage()" tabindex="0" aria-label="Next image">&#10095;</button>
             <div class="image-container">
                 <img id="expandedImage" src="" alt="Expanded Image" aria-describedby="imageDescription">
             </div>
@@ -163,28 +311,68 @@
         <p>&copy; <span id="currentYear"></span> Walid's Portfolio. All rights reserved.</p>
     </footer>
 
-    
-    <!-- JavaScript for Modals and Image Viewer -->
+    <!-- JavaScript for Tabs, Modals, and Image Viewer -->
     <script>
-
+        // Set the current year in the footer
         document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+
+        // Function to handle tab navigation
+        function handleTabNavigation() {
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const tabName = button.getAttribute('data-tab');
+                openTab(tabName);
+            });
+        });
+
+        function openTab(tabName) {
+            tabContents.forEach(content => {
+                content.style.display = content.id === tabName ? 'block' : 'none';
+            });
+
+        tabButtons.forEach(button => {
+            button.classList.toggle('active', button.getAttribute('data-tab') === tabName);
+        });
+    }
+}
+        // JavaScript for Loading Spinner
+        window.addEventListener('load', () => {
+            const spinner = document.getElementById('loading-spinner');
+            spinner.style.display = 'none';
+        });
+
+        // Call loadContent() when needed
+        document.addEventListener('DOMContentLoaded', () => {
+            loadContent(); // Example: Show spinner on page load
+        });
 
         // Function to open a modal
         function openModal(modalId) {
-            document.getElementById(modalId).style.display = "flex";
+            const modal = document.getElementById(modalId);
+            modal.style.display = "flex";
+            modal.setAttribute('aria-hidden', 'false');
         }
 
         // Function to close a modal
         function closeModal(modalId) {
-            document.getElementById(modalId).style.display = "none";
+            const modal = document.getElementById(modalId);
+            modal.style.display = "none";
+            modal.setAttribute('aria-hidden', 'true');
         }
 
         // Close modal if user clicks outside of it
         window.onclick = function(event) {
             if (event.target.classList.contains('modal')) {
                 event.target.style.display = "none";
+                event.target.setAttribute('aria-hidden', 'true');
             }
         }
+
+
 
         let currentImageIndex = 0;
         let currentModalImages = [];
@@ -296,7 +484,7 @@
             imageContainer.addEventListener('touchmove', handleTouchMove, { passive: true });
             imageContainer.addEventListener('touchend', handleTouchEnd, { passive: true });
         }
-
+        
     </script>
 </body>
 </html>
