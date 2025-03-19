@@ -12,13 +12,9 @@
 <body>
     <header>
         <div class="header-content">
-            <h1 class="logo">MY PORTFOLIO</h1>
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="projects.html">Projects</a>
-                <a href="#about.html">About</a>
-                <a href="#contact">Contact</a>
-            </nav>
+            <a href="index.html" class="logo">
+                <h1>MY PORTFOLIO</h1>
+            </a>
         </div>
     </header>
 
@@ -85,7 +81,7 @@
             <div class="video-container">
                 <div class="video-item">
                     <video controls>
-                        <source src="video1.mp4" type="video/mp4">
+                        <source src="VIDEOS/0001-0240.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                     <h2>Project Walkthrough</h2>
@@ -316,28 +312,21 @@
         document.getElementById('currentYear').textContent = new Date().getFullYear();
 
 
-        // Function to handle tab navigation
-        function handleTabNavigation() {
-            const tabButtons = document.querySelectorAll('.tab-button');
-            const tabContents = document.querySelectorAll('.tab-content');
-
-        tabButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const tabName = button.getAttribute('data-tab');
-                openTab(tabName);
-            });
-        });
-
         function openTab(tabName) {
-            tabContents.forEach(content => {
-                content.style.display = content.id === tabName ? 'block' : 'none';
-            });
+    // Hide all tab content
+    const tabContents = document.querySelectorAll('.tab-content');
+    tabContents.forEach(content => {
+        content.style.display = 'none';
+    });
 
-        tabButtons.forEach(button => {
-            button.classList.toggle('active', button.getAttribute('data-tab') === tabName);
-        });
-    }
+    // Show the selected tab content
+    document.getElementById(tabName).style.display = 'block';
 }
+
+// Optionally, set a default tab to be open when the page loads
+document.addEventListener('DOMContentLoaded', () => {
+    openTab('gallery'); // Open the Gallery tab by default
+});
         // JavaScript for Loading Spinner
         window.addEventListener('load', () => {
             const spinner = document.getElementById('loading-spinner');

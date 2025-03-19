@@ -79,8 +79,8 @@
         <div class="experience">
             <h3>Experience</h3>
             <p>
-                <strong>Junior Furniture Designer</strong><br>
-                GM Furniture S.C., 2022 - 2025<br>
+                <strong>Furniture Designer</strong><br>
+                GM Furniture S.C. 2022 - 2025<br>
                 - Assisted in the design and development of furniture collections.<br>
                 - Created 3D models and technical drawings for production.
             </p>
@@ -96,36 +96,45 @@
                 <li>Adobe Illustrator</li>
                 <li>Revit</li>
                 <li>AutoCAD</li>
-                <li>Rhino 3D</li>
                 <li>MS Office</li>
             </ul>
+        </div>
+        <div class="Resume">
+            <h3>Resume</h3>
+            <a href="path/to/your-resume.pdf" download="Walid_Resume.pdf" class="resume-download-button">
+                <img src="file.png" alt="Email Icon" width="32" height="32">
+            </a>
+        </div>
         </div>
     </div>
 </section>
 
     <!-- Contact Section -->
-<section class="contact-section">
+<section id="contact" class="contact-section">
     <h2>Contact Me</h2>
     <div class="contact-icons">
         <!-- Email -->
-        <a href="dilew7.wb@gmail.com" class="icon-link" title="Email">
-            <i class="fas fa-envelope"></i>
+        <a href="mailto:dilew7.wb@gmail.com" class="icon-link" title="Email" onclick="copyEmail(event)">
+            <img src="134146_mail_email_icon (1).png" alt="Email Icon" width="32" height="32">
         </a>
         <!-- Telegram -->
         <a href="https://t.me/@B23wld" target="_blank" class="icon-link" title="Telegram">
-            <i class="fab fa-telegram"></i>
+            <img src="7693324_telegram_social media_logo_messenger_icon.png" alt="Telegram Icon" width="32" height="32">
+
         </a>
         <!-- Phone -->
         <a href="tel:+1234567890" class="icon-link" title="Phone">
-            <i class="fas fa-phone"></i>
+            <img src="9025726_phone_icon.png" alt="Phone Icon" width="32" height="32">
+
         </a>
         <!-- LinkedIn -->
         <a href="https://www.linkedin.com/in/wada-237l/" target="_blank" class="icon-link" title="LinkedIn">
-            <i class="fab fa-linkedin"></i>
+            <img src="104493_linkedin_icon.png" alt="linkedin Icon" width="32" height="32">
+
         </a>
         <!-- GitHub -->
         <a href="https://github.com/wada-23" target="_blank" class="icon-link" title="GitHub">
-            <i class="fab fa-github"></i>
+            <img src="211904_social_github_icon.png" alt="github Icon" width="32" height="32">
         </a>
     </div>
 </section>
@@ -135,28 +144,36 @@
         <p>&copy; <span id="currentYear"></span> Walid's Portfolio. All rights reserved.</p>
     </footer>
 
-    <!-- JavaScript for Copy Email -->
+    
     <script>
+        function openEmailClient(event) {
+    // Allow the default mailto: behavior to open the email client
+    return true;
+}
 
         document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-        function copyEmail(event) {
-            event.preventDefault();
-            const email = event.target.href.replace('mailto:', '');
-            navigator.clipboard.writeText(email)
-                .then(() => {
-                    alert('Email copied to clipboard: ' + email);
-                })
-                .catch((err) => {
-                    console.error('Failed to copy email: ', err);
-                    alert('Failed to copy email. Please copy it manually.');
-                });
-        }
         // JavaScript for Loading Spinner
         window.addEventListener('load', () => {
             const spinner = document.getElementById('loading-spinner');
             spinner.style.display = 'none';
         });
+
+        // Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault(); // Prevent default jump behavior
+        const targetId = this.getAttribute('href'); // Get the target section ID
+        const targetElement = document.querySelector(targetId); // Find the target element
+
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth', // Smooth scroll
+                block: 'start' // Align to the top of the section
+            });
+        }
+    });
+});
             </script>
 </body>
 </html>

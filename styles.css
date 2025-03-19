@@ -1,3 +1,8 @@
+/* Smooth scrolling for the entire page */
+html {
+    scroll-behavior: smooth;
+}
+
 /* General Styles */
 body {
     font-family: Arial, sans-serif;
@@ -47,7 +52,25 @@ header {
 
 .logo {
     margin: 0;
-    font-size: 1.5em;
+    font-size: 1.25em;
+}
+
+/* Logo Link Styling */
+.logo {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit text color */
+}
+
+.logo h1 {
+    margin: 0; /* Remove default margin */
+    font-size: 1.25rem; /* Adjust font size */
+    font-weight: bold; /* Make it bold */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Hover Effect */
+.logo:hover h1 {
+    color: #ff6347; /* Change color on hover */
 }
 
 /* Navigation Styles */
@@ -781,3 +804,64 @@ footer {
     }
 }
 
+/* Slide Transition */
+.slide-out {
+    animation: slideOut 0.5s ease-in-out forwards;
+}
+
+.slide-in {
+    animation: slideIn 0.5s ease-in-out forwards;
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Resume Download Button */
+.resume-download-button {
+    display: inline-block;
+    padding: 12px 24px; /* Adjust padding for size */
+    font-size: 16px; /* Font size */
+    font-weight: bold; /* Bold text */
+    color: #fff; /* Text color */
+    background-color: #0077b5; /* Background color (e.g., LinkedIn blue) */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Hover Effect */
+.resume-download-button:hover {
+    background-color: #005f8a; /* Darker shade on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Active Effect (when clicked) */
+.resume-download-button:active {
+    background-color: #004c6d; /* Even darker shade */
+    transform: translateY(0); /* Reset lift effect */
+}
+
+/* Optional: Add an icon */
+.resume-download-button::before {
+    content: "\f019"; /* Font Awesome download icon */
+    font-family: "Font Awesome 5 Free"; /* Use Font Awesome */
+    font-weight: 900; /* Required for Font Awesome */
+    margin-right: 8px; /* Space between icon and text */
+}
