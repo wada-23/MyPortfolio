@@ -1,0 +1,407 @@
+/* Smooth scrolling for the entire page */
+html {
+    scroll-behavior: smooth;
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e6e6e6;
+    color: #fff;
+    min-height: 100vh; /* Ensure the body takes up at least the full viewport height */
+    display: flex;
+    flex-direction: column;
+}
+
+header, footer {
+    flex-shrink: 0;
+    padding: 20px 0px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+
+
+main {
+    flex-grow: 1;
+}
+
+/* Header Styles */
+header {
+    background-color: transparent; /* Make the header transparent */
+    color: #fff;
+    padding-top: 20px;
+    position: absolute; /* Fix the header at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure the header is above other content */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    color: #fff;
+}
+
+.logo {
+    margin: 0;
+    font-size: 1.25em;
+}
+
+/* Logo Link Styling */
+.logo {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit text color */
+}
+
+.logo h1 {
+    margin: 0; /* Remove default margin */
+    font-size: 1.25rem; /* Adjust font size */
+    font-weight: bold; /* Make it bold */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Hover Effect */
+.logo:hover h1 {
+    color: #ff6347; /* Change color on hover */
+}
+
+/* Navigation Styles */
+nav {
+    display: flex;
+    gap: 20px; /* Adds space between nav items */
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease; /* Smooth transition for link color */
+}
+
+nav a:hover {
+    color: #ff6347; /* Change color on hover */
+}
+
+/* Add a background color when scrolling */
+header.scrolled {
+    background-color: rgba(51, 51, 51, 0.9); /* Semi-transparent background */
+}
+/* Hero Section Styles */
+.hero {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 50px 20px 50px 100px;
+    background: url(background\ 6768f29b6d5da42209177506_Rectang.jpg) no-repeat center center/cover;
+    background-color: #333; /* Fallback color */
+
+}
+
+.hero-content {
+    max-width: 50%;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.hero button {
+    background-color: #202020;
+    color: #fff;
+    border: solid;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 7px;
+}
+
+.hero button:hover {
+    background-color: #555; /* Darker shade on hover */
+}
+
+
+/* Portrait Placeholder Styles */
+.portrait-placeholder {
+    width: 50%;
+    text-align: center;
+}
+
+.portrait-placeholder img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 40px; /* Optional: Adds rounded corners */
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.hero, .about-section, .other-details-section, .contact-section {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Add buffer before About Me section */
+#about h2{
+    padding: 30px 30px ; /* Adjust this value to increase or decrease the buffer */
+    background-color: #333;
+    border-radius: 5px;
+    text-align: center;
+    
+}
+
+/* About Me Section */
+.about-section {
+    padding: 50px 20px;
+    background-color: #222;
+    color: #fff;
+}
+
+.about-content {
+    display: block;
+    justify-content: space-evenly;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-text {
+    max-width: 100%;
+    text-align: left;
+}
+
+.about-text p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+
+}
+
+/* Software Skills Section */
+.skills-section {
+    padding: 150px 20px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+
+.skill {
+    margin-bottom: 100px;
+}
+
+/* Other Details Section */
+.other-details-section {
+    padding: 50px 20px;
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.details-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+}
+
+.education, .experience, .skills {
+    flex: 1;
+    text-align: left;
+}
+
+.education h3, .experience h3, .skills h3 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.education p, .experience p, .skills ul {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.skills ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skills li {
+    margin-bottom: 10px;
+}
+
+.contact-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 50px 20px;
+    background-color: #333; /* Background color for the section */
+    color: #fff;
+    text-align: center;
+}
+
+.contact-section h2 {
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Space between icons */
+}
+
+.icon-link {
+    color: #fff; /* Icon color */
+    font-size: 2em; /* Icon size */
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+    text-decoration: none; /* Remove underline */
+}
+
+.icon-link:hover {
+    transform: scale(1.2); /* Enlarge icon on hover */
+    color: #ff6347; /* Change color on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-icons {
+        gap: 20px; /* Reduce space between icons on smaller screens */
+    }
+
+    .icon-link {
+        font-size: 1.5em; /* Smaller icons for mobile */
+    }
+}
+
+/* Footer Styles */
+footer {
+    font-size: smaller;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 20px;
+    position: relative;
+    top: 50px;
+}
+
+/* Responsive Design - Media Queries */
+@media (max-width: 768px) {
+    /* Adjust header for smaller screens */
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* Adjust hero section for smaller screens */
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .portrait-placeholder {
+        width: 80%;
+    }
+
+
+    /* Adjust about section for smaller screens */
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-text {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* Adjust footer for smaller screens */
+    footer {
+        position: static; /* Remove fixed positioning on small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further adjustments for very small screens */
+    .hero h1 {
+        font-size: 1.8em;
+    }
+
+    .hero p {
+        font-size: 0.9em;
+    }
+
+    .hero button {
+        padding: 8px 16px;
+        font-size: 0.9em;
+    }
+
+    .portrait-placeholder {
+        width: 100%;
+    }
+
+    .details-content {
+        flex-direction: column;
+    }
+}
+
+/* Hover Effect */
+.resume-download-button:hover {
+    background-color: #005f8a; /* Darker shade on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Active Effect (when clicked) */
+.resume-download-button:active {
+    background-color: #004c6d; /* Even darker shade */
+    transform: translateY(0); /* Reset lift effect */
+}
+
+/* Optional: Add an icon */
+.resume-download-button::before {
+    content: "\f019"; /* Font Awesome download icon */
+    font-family: "Font Awesome 5 Free"; /* Use Font Awesome */
+    font-weight: 900; /* Required for Font Awesome */
+    margin-right: 8px; /* Space between icon and text */
+}
